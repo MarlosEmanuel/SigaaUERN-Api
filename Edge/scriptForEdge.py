@@ -8,8 +8,8 @@ from io import StringIO
 import json
 import os
 
-usuario = "marlos"
-senha = "marlos2818"
+usuario = "DIGITE O SEU USUARIO"
+senha = "DIGITE A SUA SENHA"
 
 navegador = webdriver.Edge()
 
