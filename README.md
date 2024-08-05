@@ -34,7 +34,7 @@ para a sua senha
 
 ** O usuario e senha de acesso ao sigaa **
 
-### Passo 3
+### Dados
 No diretorio Results, devera conter o json com todos os dados.
 
 ## Bom uso :)
