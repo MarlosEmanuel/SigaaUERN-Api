@@ -22,7 +22,7 @@ Instale o webdriver-manager
   pip install webdriver-manager
 ```
 ## USO
-Apos instalar todas as bibliotecas mude as o valor das varivaies:
+Apos instalar todas as bibliotecas mude os valores das varivaies:
 ```bash
   usuario = "NOME DO SEU USUARIO"
 ```
