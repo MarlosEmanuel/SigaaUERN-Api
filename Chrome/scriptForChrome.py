@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome import options
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
@@ -8,10 +9,18 @@ from io import StringIO
 import json
 import os
 
-usuario = " DIGITEO SEU USUARIO"
+usuario = "DIGITE O SEU USUARIO"
 senha = "DIGITE A SUA SENHA"
 
-navegador = webdriver.Chrome()
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+
+servico = Service(ChromeDriverManager().install())
+
+#iniciando...
+navegador = webdriver.Chrome(options=options,service=servico)
 
 try:
     navegador.get("https://sigaa.uern.br/sigaa/verTelaLogin.do")

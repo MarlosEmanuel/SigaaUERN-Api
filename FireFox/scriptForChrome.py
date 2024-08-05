@@ -1,7 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.edge.options import Options
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.firefox.options import Options
+from webdriver_manager.firefox import GeckoDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
@@ -12,15 +12,15 @@ import os
 usuario = "DIGITE O SEU USUARIO"
 senha = "DIGITE A SUA SENHA"
 
-
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
 
-servico = Service(EdgeChromiumDriverManager().install())
+servico = Service(GeckoDriverManager().install())
 
-navegador = webdriver.Edge(options=options)
+#iniciando...
+navegador = webdriver.Chrome(options=options,service=servico)
 
 try:
     navegador.get("https://sigaa.uern.br/sigaa/verTelaLogin.do")

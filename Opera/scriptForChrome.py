@@ -1,7 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.edge.service import Service
-from selenium.webdriver.edge.options import Options
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.chrome.service import service
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.opera import OperaDriverManager
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
@@ -12,15 +12,16 @@ import os
 usuario = "DIGITE O SEU USUARIO"
 senha = "DIGITE A SUA SENHA"
 
-
 options = Options()
 options.add_argument('--headless')
 options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
 
-servico = Service(EdgeChromiumDriverManager().install())
+webdriver_service = service.Service(OperaDriverManager().install())
+webdriver_service.start()
 
-navegador = webdriver.Edge(options=options)
+#iniciando...
+navegador = webdriver.Remote(webdriver_service.service_url, webdriver.DesiredCapabilities.OPERA,options=options)
 
 try:
     navegador.get("https://sigaa.uern.br/sigaa/verTelaLogin.do")
