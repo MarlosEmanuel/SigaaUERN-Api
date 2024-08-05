@@ -7,7 +7,7 @@ Instale o selenium
 ```
 Instale o BeautifulSoup4
 ```bash
-  pip install BeautifulSoup4
+  pip install beautifulsoup4
 ```
 Instale o pandas
 ```bash
